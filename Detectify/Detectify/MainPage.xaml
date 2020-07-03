@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="Detectify.MainPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="0,0,10,0">
+            <Button BackgroundColor="Black"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Text="Take Photo"
+                    TextColor="White"
+                    FontSize="14"
+                    FontFamily="{StaticResource BoldFont}"
+                    CornerRadius="3"
+                    Clicked="Button_Clicked"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                <Label x:Name="Mode" 
+                       Text="Emoji Mode"
+                       TextColor="Black"
+                       FontSize="14"
+                       FontFamily="{StaticResource NormalFont}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="EndAndExpand"
+                       Margin="0"
+                       Padding="0"/>
+                <Switch VerticalOptions="Center" 
+                        HorizontalOptions="EndAndExpand"
+                        IsToggled="True"
+                        Toggled="Switch_Toggled"
+                        Margin="0"/>
+            </StackLayout>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <forms:SKCanvasView x:Name="Capture" PaintSurface="Capture_PaintSurface" Margin="20,0,20,40"/>
+    </ContentPage.Content>
+</ContentPage>
