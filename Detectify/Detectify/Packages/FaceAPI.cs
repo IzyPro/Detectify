@@ -25,7 +25,7 @@ namespace Detectify.Packages
         {
             List<MultipleFacesDetected> multipleFaces = null;
             var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), true, true, returnFaceAttributes: new List<FaceAttributeType> { 
-                //{ FaceAttributeType.Emotion},
+                { FaceAttributeType.Emotion},
                 //{ FaceAttributeType.Age},
                 //{FaceAttributeType.Gender },
                 //{FaceAttributeType.FacialHair },
