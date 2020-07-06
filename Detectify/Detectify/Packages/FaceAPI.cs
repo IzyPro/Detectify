@@ -24,7 +24,16 @@ namespace Detectify.Packages
          public async Task<List<MultipleFacesDetected>> GetMultipleFaces(MediaFile image)
         {
             List<MultipleFacesDetected> multipleFaces = null;
-            var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), returnFaceAttributes: new List<FaceAttributeType> { { FaceAttributeType.Emotion}});
+            var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), true, true, returnFaceAttributes: new List<FaceAttributeType> { 
+                //{ FaceAttributeType.Emotion},
+                //{ FaceAttributeType.Age},
+                //{FaceAttributeType.Gender },
+                //{FaceAttributeType.FacialHair },
+                //{FaceAttributeType.Glasses },
+                //{FaceAttributeType.Hair },
+                //{FaceAttributeType.Makeup },
+                //{FaceAttributeType.Accessories }
+            });
             MultipleFacesDetected multipleFacesDetected = null;
 
             if(faceApiResponseList.Count > 0)

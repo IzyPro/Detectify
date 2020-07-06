@@ -17,6 +17,7 @@
                     FontSize="14"
                     FontFamily="{StaticResource BoldFont}"
                     CornerRadius="3"
+                    HeightRequest="38"
                     Clicked="Button_Clicked"/>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
                 <Label x:Name="Mode" 
@@ -38,6 +39,6 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <forms:SKCanvasView x:Name="Capture" PaintSurface="Capture_PaintSurface" Margin="20,0,20,40"/>
+        <forms:SKCanvasView x:Name="Capture" PaintSurface="Capture_PaintSurface" Margin="20,0,20,20"/>
     </ContentPage.Content>
 </ContentPage>

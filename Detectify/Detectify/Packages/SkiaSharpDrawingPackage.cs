@@ -52,6 +52,10 @@ namespace Detectify.Packages
         }
         private SKBitmap GetEmojiBitmap(string emotion)
         {
+            //string resourceID = GetImageResourceID(emotion).ToString();
+            //Assembly assembly = GetType().GetTypeInfo().Assembly;
+            //SKBitmap resourceBitmap = null;
+            //using (Stream stream = assembly.GetManifestResourceStream(resourceID))
             string resourceID = GetImageResourceID(emotion).ToString();
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             SKBitmap resourceBitmap = null;
