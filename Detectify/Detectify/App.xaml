@@ -7,6 +7,11 @@
              x:Class="Detectify.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarTextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+        <ResourceDictionary>
             <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
                 <On Platform="Android" Value="Montserrat-Bold.ttf#Montserrat"/>
                 <On Platform="iOS" Value="Montserrat-Bold"/>

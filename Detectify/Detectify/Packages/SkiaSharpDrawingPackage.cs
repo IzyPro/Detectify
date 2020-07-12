@@ -143,7 +143,7 @@ namespace Detectify.Packages
             var text = tag;
 
             var textWidth = textPaint.MeasureText(text);
-            textPaint.TextSize = 0.5f * scaledRectangleWidth * textPaint.TextSize / textWidth;
+            textPaint.TextSize = 0.4f * scaledRectangleWidth * textPaint.TextSize / textWidth;
 
             var textBounds = new SKRect();
             textPaint.MeasureText(text, ref textBounds);

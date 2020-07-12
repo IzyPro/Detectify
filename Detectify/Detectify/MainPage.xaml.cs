@@ -1,14 +1,13 @@
 ﻿using Acr.UserDialogs;
 using Detectify.Models;
 using Detectify.Packages;
+using Detectify.ViewModels;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -19,11 +18,13 @@ namespace Detectify
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private Lazy<List<MultipleFacesDetected>> multipleFaces = new Lazy<List<MultipleFacesDetected>>();
+        public static Lazy<List<MultipleFacesDetected>> multipleFaces = new Lazy<List<MultipleFacesDetected>>();
         private FaceAPI faceAPI;
         private SKBitmap image;
         private SkiaSharpDrawingPackage drawingPackage;
         private bool drawEmoji = true;
+
+        public static MediaFile capturedImage;
         public MainPage()
         {
             InitializeComponent();
@@ -94,7 +95,7 @@ namespace Detectify
         {
             UserDialogs.Instance.ShowLoading("Analyzing", MaskType.Black);
         }
-        private async Task<MediaFile> TakePicture()
+        public async Task<MediaFile> TakePicture()
         {
             image = null;
             MediaFile mediaFile = null;
@@ -115,9 +116,9 @@ namespace Detectify
             }
             return mediaFile;
         }
-        private async void TakePictureAndAnalizeImage()
+        public async void TakePictureAndAnalizeImage()
         {
-            var capturedImage = await TakePicture();
+            capturedImage = await TakePicture();
             if(multipleFaces.Value.Count > 0)
             {
                 multipleFaces.Value.Clear();
@@ -146,6 +147,10 @@ namespace Detectify
                     UserDialogs.Instance.Toast("No Face Found");
                 }
             }
+        }
+        private void Details_Page(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FaceList { BindingContext = new FacesViewModel(capturedImage,FaceAPI.faceApiResponseList)});
         }
     }
 }

@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              mc:Ignorable="d"
-             x:Class="Detectify.MainPage">
+             x:Class="Detectify.MainPage"
+             BackgroundColor="White">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="0,0,10,0">
@@ -14,7 +15,7 @@
                     VerticalOptions="Center"
                     Text="Take Photo"
                     TextColor="White"
-                    FontSize="14"
+                    FontSize="12"
                     FontFamily="{StaticResource BoldFont}"
                     CornerRadius="3"
                     HeightRequest="38"
@@ -23,8 +24,8 @@
                 <Label x:Name="Mode" 
                        Text="Emoji Mode"
                        TextColor="Black"
-                       FontSize="14"
-                       FontFamily="{StaticResource NormalFont}"
+                       FontSize="12"
+                       FontFamily="{StaticResource BoldFont}"
                        VerticalOptions="Center"
                        HorizontalOptions="EndAndExpand"
                        Margin="0"
@@ -34,6 +35,12 @@
                         IsToggled="True"
                         Toggled="Switch_Toggled"
                         Margin="0"/>
+                <ImageButton VerticalOptions="Center"
+                             HorizontalOptions="EndAndExpand"
+                             Clicked="Details_Page"
+                             Source="List.png"
+                             HeightRequest="20"
+                             Margin="5,0,0,0"/>
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>

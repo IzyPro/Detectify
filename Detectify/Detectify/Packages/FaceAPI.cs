@@ -1,12 +1,13 @@
-﻿using System;
-using Microsoft.Azure.CognitiveServices.Vision.Face;
+﻿using Microsoft.Azure.CognitiveServices.Vision.Face;
 using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
 using Plugin.Media.Abstractions;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using Detectify.Models;
+using System;
+using System.Linq;
+using Detectify.ViewModels;
 
 namespace Detectify.Packages
 {
@@ -15,7 +16,7 @@ namespace Detectify.Packages
         private string APIKEY = "0349b12cf6094eeab1600ee79937ee81";
         private string ENDPOINT = "https://detectify.cognitiveservices.azure.com/";
         private FaceClient faceClient;
-
+        public static IEnumerable<DetectedFace> faceApiResponseList;
         public FaceAPI()
         {
             InitFaceClient();
@@ -23,21 +24,25 @@ namespace Detectify.Packages
 
          public async Task<List<MultipleFacesDetected>> GetMultipleFaces(MediaFile image)
         {
+            //List<MultipleFacesDetected> multipleFaces = null;
+            //var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), returnFaceAttributes: new List<FaceAttributeType> { { FaceAttributeType.Emotion}/*, { FaceAttributeType.Age}, { FaceAttributeType.FacialHair},{ FaceAttributeType.Gender},{ FaceAttributeType.Glasses},{ FaceAttributeType.Hair},{ FaceAttributeType.Makeup}*/ });
+            //MultipleFacesDetected multipleFacesDetected = null;
             List<MultipleFacesDetected> multipleFaces = null;
-            var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), returnFaceAttributes: new List<FaceAttributeType> { { FaceAttributeType.Emotion}});
+            faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStreamWithImageRotatedForExternalStorage(), true, true, Enum.GetValues(typeof(FaceAttributeType)).OfType<FaceAttributeType>().ToList());
             MultipleFacesDetected multipleFacesDetected = null;
 
-            if(faceApiResponseList.Count > 0)
+            if (faceApiResponseList.Any())
             {
                 multipleFaces = new List<MultipleFacesDetected>();
 
-                foreach(DetectedFace detectedFace in faceApiResponseList)
+                foreach (DetectedFace detectedFace in faceApiResponseList)
                 {
                     multipleFacesDetected = new MultipleFacesDetected
                     {
                         FaceRectangle = detectedFace.FaceRectangle,
                     };
                     multipleFacesDetected.PredominantEmotion = FindDetectedEmotion(detectedFace.FaceAttributes.Emotion);
+                    
                     multipleFaces.Add(multipleFacesDetected);
                 }
             }
