@@ -24,7 +24,7 @@
                 <Label x:Name="Mode" 
                        Text="Emoji Mode"
                        TextColor="Black"
-                       FontSize="12"
+                       FontSize="14"
                        FontFamily="{StaticResource BoldFont}"
                        VerticalOptions="Center"
                        HorizontalOptions="EndAndExpand"

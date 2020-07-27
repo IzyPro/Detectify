@@ -22,31 +22,31 @@ namespace Detectify.Packages
             InitFaceClient();
         }
 
-         public async Task<List<MultipleFacesDetected>> GetMultipleFaces(MediaFile image)
+         public async Task<List<DetectedFaceExtended>> GetMultipleFaces(MediaFile image)
         {
-            //List<MultipleFacesDetected> multipleFaces = null;
+            //List<DetectedFaceExtended> multipleDetectedFaces = null;
             //var faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStream(), returnFaceAttributes: new List<FaceAttributeType> { { FaceAttributeType.Emotion}/*, { FaceAttributeType.Age}, { FaceAttributeType.FacialHair},{ FaceAttributeType.Gender},{ FaceAttributeType.Glasses},{ FaceAttributeType.Hair},{ FaceAttributeType.Makeup}*/ });
-            //MultipleFacesDetected multipleFacesDetected = null;
-            List<MultipleFacesDetected> multipleFaces = null;
+            //DetectedFaceExtended detdFace = null;
+            List<DetectedFaceExtended> multipleDetectedFaces = null;
             faceApiResponseList = await faceClient.Face.DetectWithStreamAsync(image.GetStreamWithImageRotatedForExternalStorage(), true, true, Enum.GetValues(typeof(FaceAttributeType)).OfType<FaceAttributeType>().ToList());
-            MultipleFacesDetected multipleFacesDetected = null;
+            DetectedFaceExtended detdFace = null;
 
             if (faceApiResponseList.Any())
             {
-                multipleFaces = new List<MultipleFacesDetected>();
+                multipleDetectedFaces = new List<DetectedFaceExtended>();
 
                 foreach (DetectedFace detectedFace in faceApiResponseList)
                 {
-                    multipleFacesDetected = new MultipleFacesDetected
+                    detdFace = new DetectedFaceExtended
                     {
                         FaceRectangle = detectedFace.FaceRectangle,
                     };
-                    multipleFacesDetected.PredominantEmotion = FindDetectedEmotion(detectedFace.FaceAttributes.Emotion);
+                    detdFace.PredominantEmotion = FindDetectedEmotion(detectedFace.FaceAttributes.Emotion);
                     
-                    multipleFaces.Add(multipleFacesDetected);
+                    multipleDetectedFaces.Add(detdFace);
                 }
             }
-            return multipleFaces;
+            return multipleDetectedFaces;
         }
 
         private string FindDetectedEmotion(Emotion emotion)

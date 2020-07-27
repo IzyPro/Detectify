@@ -148,8 +148,8 @@ namespace Detectify.Packages
             var textBounds = new SKRect();
             textPaint.MeasureText(text, ref textBounds);
 
-            var xText = startLeft;
-            var yText = startTop + scaledRectangleHeight;
+            var xText = startLeft + 10;
+            var yText = startTop + (scaledRectangleHeight - 25);
 
             var paint = new SKPaint
             {

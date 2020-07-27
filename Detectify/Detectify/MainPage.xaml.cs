@@ -18,7 +18,7 @@ namespace Detectify
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public static Lazy<List<MultipleFacesDetected>> multipleFaces = new Lazy<List<MultipleFacesDetected>>();
+        public static Lazy<List<DetectedFaceExtended>> multipleFaces = new Lazy<List<DetectedFaceExtended>>();
         private FaceAPI faceAPI;
         private SKBitmap image;
         private SkiaSharpDrawingPackage drawingPackage;
