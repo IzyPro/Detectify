@@ -13,7 +13,7 @@ namespace Detectify.Packages
 {
     public class FaceAPI
     {
-        private string APIKEY = "0349b12cf6094eeab1600ee79937ee81";
+        private string APIKEY = "Your API Key goes here";
         private string ENDPOINT = "https://detectify.cognitiveservices.azure.com/";
         private FaceClient faceClient;
         public static IEnumerable<DetectedFace> faceApiResponseList;
