@@ -1,0 +1,15 @@
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\bin\Release\netstandard2.0\Detectify.deps.json
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\bin\Release\netstandard2.0\Detectify.dll
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\bin\Release\netstandard2.0\ref\Detectify.dll
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\bin\Release\netstandard2.0\Detectify.pdb
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\Detectify.csprojAssemblyReference.cache
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\FaceDetails.xaml.g.cs
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\FaceList.xaml.g.cs
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\Detectify.AssemblyInfoInputs.cache
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\Detectify.AssemblyInfo.cs
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\Detectify.dll
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\ref\Detectify.dll
+C:\Users\Izy\Documents\Visual Studio 2019\Projects\Detectify\Detectify\Detectify\obj\Release\netstandard2.0\Detectify.pdb

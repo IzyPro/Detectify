@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Detectify.FaceList"
+             Title="Recognized Faces"
+             NavigationPage.IconColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="Faces" ItemsSource="{Binding Faces}"
+                  SelectedItem="{Binding SelectedFace}"
+                  HasUnevenRows="True"
+                  RowHeight="60"
+                  ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Spacing="20" Margin="20,0,20,0">
+                                <Image Source="{Binding Photo}" Aspect="AspectFit" HeightRequest="60"/>
+                                <Label VerticalOptions="Center" Text="{Binding Description}" FontFamily="{StaticResource BoldFont}" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

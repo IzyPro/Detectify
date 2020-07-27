@@ -143,13 +143,13 @@ namespace Detectify.Packages
             var text = tag;
 
             var textWidth = textPaint.MeasureText(text);
-            textPaint.TextSize = 0.5f * scaledRectangleWidth * textPaint.TextSize / textWidth;
+            textPaint.TextSize = 0.4f * scaledRectangleWidth * textPaint.TextSize / textWidth;
 
             var textBounds = new SKRect();
             textPaint.MeasureText(text, ref textBounds);
 
-            var xText = startLeft;
-            var yText = startTop + scaledRectangleHeight;
+            var xText = startLeft + 10;
+            var yText = startTop + (scaledRectangleHeight - 25);
 
             var paint = new SKPaint
             {
